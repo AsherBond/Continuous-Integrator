@@ -1,0 +1,12 @@
+#!/bin/bash
+# Asher Bond 2011
+# rtar remotely tars something
+# http://github.com/AsherBond/service-oriented-architect/integration-toolkit
+# LICENSE: AGPL version 3
+# USAGE: rtar </directory/to/archive> <destination.host> <outfile.tar>
+
+dir=$1
+desthost=$2
+outfile=$3
+
+(cd $dir ; tar cpf - .) |ssh -l $desthost dd of=$outfile obs=1024
