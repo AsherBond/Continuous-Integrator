@@ -6,16 +6,16 @@
 
 USAGE='rtar </directory/to/archive> <destination-user> <destination.host> <port> <outfile.tar> [privatekey.pem]'
 
+if [ -z $1$2$3$4$5 ]; then
+	echo "$USAGE"
+	exit
+fi
+
 dir=$1
 user=$2
 desthost=$3
 port=$4
 outfile=$5
-
-if [ -z $1$2$3$4$5 ]; then
-	echo "$USAGE"
-	exit
-fi
 
 if [ ! -z $6 ]; then
 	privatekey="-i $6"
