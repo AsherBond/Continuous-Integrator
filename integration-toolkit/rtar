@@ -19,6 +19,7 @@ fi
 
 if [ ! -z $6 ]; then
 	privatekey="-i $6"
+else	privatekey=''
 fi
 
 (cd $dir ; tar cpf - .) |ssh $privatekey -l $user $desthost $port dd of=$outfile obs=1024
