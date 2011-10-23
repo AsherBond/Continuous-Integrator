@@ -3,10 +3,12 @@
 # rtar remotely tars something
 # http://github.com/AsherBond/service-oriented-architect/integration-toolkit
 # LICENSE: AGPL version 3
-# USAGE: rtar </directory/to/archive> <destination.host> <outfile.tar>
+# USAGE: rtar </directory/to/archive> <destination-user> <destination.host> <port> <outfile.tar>
 
 dir=$1
-desthost=$2
-outfile=$3
+user=$2
+desthost=$3
+port=$4
+outfile=$5
 
-(cd $dir ; tar cpf - .) |ssh -l $desthost dd of=$outfile obs=1024
+(cd $dir ; tar cpf - .) |ssh -l $user $desthost $port dd of=$outfile obs=1024
