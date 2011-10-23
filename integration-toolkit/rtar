@@ -3,12 +3,18 @@
 # rtar remotely archives a local directory
 # https://github.com/AsherBond/Continuous-Integrator/
 # LICENSE: AGPL version 3
-# USAGE: rtar </directory/to/archive> <destination-user> <destination.host> <port> <outfile.tar>
+
+USAGE='rtar </directory/to/archive> <destination-user> <destination.host> <port> <outfile.tar>'
 
 dir=$1
 user=$2
 desthost=$3
 port=$4
 outfile=$5
+
+if [ -z $1$2$3$4$5 ]; then
+	echo "$USAGE"
+	exit
+fi
 
 (cd $dir ; tar cpf - .) |ssh -l $user $desthost $port dd of=$outfile obs=1024
