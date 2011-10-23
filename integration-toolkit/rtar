@@ -1,7 +1,7 @@
 #!/bin/bash
 # Asher Bond 2011
-# rtar remotely tars something
-# http://github.com/AsherBond/service-oriented-architect/integration-toolkit
+# rtar remotely archives a local directory
+# https://github.com/AsherBond/Continuous-Integrator/
 # LICENSE: AGPL version 3
 # USAGE: rtar </directory/to/archive> <destination-user> <destination.host> <port> <outfile.tar>
 
