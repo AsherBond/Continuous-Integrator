@@ -1,0 +1,23 @@
+#!/bin/bash -e
+# Asher Bond 2012
+# License AGPL v3
+# installs continuous integrator
+
+# target installation directory with trailing slash
+targetInstallDir='/usr/local/bin/'
+
+echo "Installing Continuous Integrator..."
+
+echo "Installing Assimilation ToolCloud..."
+cd assimilation-toolcloud
+
+echo "Installing GitUp..."
+cd gitup
+ln -s  ci-learn-repos $targetInstallDir
+ln -s  ci-update-all-repos $targetInstallDir
+ln -s  ci-update-git-repo $targetInstallDir
+echo "Done installing GitUp."
+
+echo "Done installing Assimilation ToolCloud."
+
+echo "Done installing Continuous Integrator. Hope you enjoi!"

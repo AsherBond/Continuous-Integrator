@@ -1,0 +1,16 @@
+#!/bin/bash
+# Asher Bond 2012
+# update a single repo
+# http://asherbond.com
+# License: AGPL v3
+
+SYNAX="$0 </path/to/git/repo> <remote-git-path>"
+
+if [ $1 -z ]; then
+	print $SYNTAX
+	exit;
+fi
+
+cd $1
+git pull && git push --repo=$2
+

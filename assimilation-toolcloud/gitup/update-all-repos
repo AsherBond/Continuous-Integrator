@@ -1,0 +1,7 @@
+#!/bin/bash
+# Asher Bond 2012
+# update my repos
+
+
+learn-repos $localGitPath | xargs update-git-repo $remoteGitPath
+

@@ -1,0 +1,20 @@
+#!/bin/bash
+# Asher Bond 2012
+# http://asherbond.com
+# License: AGPL v3
+# learn about my git repos, dump a list
+# which need to be updated
+
+
+
+# get developer specifics
+remoteGitPath='git@github.com:AsherBond'
+localGitPath='/home/asher/git'
+
+# by convention, the name of each directory which contains
+# the .git file is also the name of my git repo:
+# for example git push --repo=git@github.com:AsherBond/vcap.git
+# where repoDomain is github.com
+
+# for each directory that contains a .git .. show me the money
+find $localGitPath -type d -name ".git" | perl -p -e 's/\/\.git$//g'
